@@ -1,0 +1,20 @@
+{
+  "name": "web-framework-app",
+  "version": "1.0.0",
+  "description": "Component rendering mini-app inspired by Backbone.js and Marionette.js frameworks",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev:db": "json-server --watch src/fake-database/db.json",
+    "dev:serve": "npx parcel public/index.html",
+    "dev": "concurrently npm:dev:*"
+  },
+  "author": "Dusan Milenkovic",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "parcel": "^2.11.0",
+    "typescript": "^5.3.3"
+  }
+}
