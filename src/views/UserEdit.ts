@@ -1,9 +1,7 @@
-import { User } from '../models/User'
-import { UserForm } from './UserForm'
-import { UserShow } from './UserShow'
+import { User } from '../models'
+import { UserForm, UserShow } from './'
 import { View } from './View'
-import { WARNS } from '../types/enums'
-import { UserProps } from '../types/interfaces'
+import { WARNS, UserProps } from '../types'
 
 /**
  * Class extending the View abstract class. Defines UserEdit view class - component - HTML and nesting components structure.

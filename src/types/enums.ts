@@ -1,4 +1,4 @@
-import { UserShowData } from './interfaces'
+import { UserShowData } from './'
 
 /*
     Reasons for using readonly objects over Enums are of the same nature as the TS Documentation suggests:

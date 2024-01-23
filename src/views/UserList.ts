@@ -1,7 +1,7 @@
-import { User } from '../models/User'
+import { User } from '../models'
 import { CollectionView } from './CollectionView'
-import { UserShow } from './UserShow'
-import { UserProps } from '../types/interfaces'
+import { UserShow } from './'
+import { UserProps } from '../types'
 
 /**
  * Class extending the CollectionView abstract class. Defines that the UserShow view class - component - will be used to render a User model to the DOM.

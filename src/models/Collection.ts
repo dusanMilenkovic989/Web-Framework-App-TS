@@ -1,8 +1,5 @@
-import { ApiSync } from './ApiSync'
-import { Events } from './Events'
-import { Model } from './Model'
-import { WARNS } from '../types/enums'
-import { Eventing, Sync, HasId, Deserialize } from '../types/interfaces'
+import { ApiSync, Events, Model } from './'
+import { WARNS, Eventing, Sync, HasId, Deserialize } from '../types'
 
 /**
  * Class representing collection of models.

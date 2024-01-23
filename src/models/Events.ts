@@ -1,5 +1,4 @@
-import { WARNS } from '../types/enums'
-import { Callback } from '../types/interfaces'
+import { WARNS, Callback } from '../types'
 
 /**
  * Class defining an arbitrary (most likely even general) eventing system.

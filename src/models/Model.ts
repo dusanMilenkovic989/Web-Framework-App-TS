@@ -1,5 +1,4 @@
-import { WARNS } from '../types/enums'
-import { Data, Eventing, Sync, HasId } from '../types/interfaces'
+import { WARNS, Data, Eventing, Sync, HasId } from '../types'
 
 // The idea:
 // **** The Extraction approach ****

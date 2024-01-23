@@ -1,6 +1,5 @@
-import { Model } from '../models/Model'
-import { WARNS } from '../types/enums'
-import { HasId, EventsCallback } from '../types/interfaces'
+import { Model } from '../models'
+import { WARNS, HasId, EventsCallback } from '../types'
 
 /*
     The idea:

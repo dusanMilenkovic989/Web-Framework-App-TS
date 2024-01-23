@@ -1,4 +1,4 @@
-import { HasId } from '../types/interfaces'
+import { HasId } from '../types'
 
 /**
  * Class defining an arbitrary persisting system which relies upon using an outside API.

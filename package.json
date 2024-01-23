@@ -1,7 +1,7 @@
 {
   "name": "web-framework-app",
   "version": "1.0.0",
-  "description": "Component rendering mini-app inspired by Backbone.js and Marionette.js frameworks",
+  "description": "Component rendering mini-app inspired by Backbone.js and Marionette.js frameworks. Purpose of this application is to present the manner in which TypeScript should be used to access its full potential while developing an application, and as a playground.",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",

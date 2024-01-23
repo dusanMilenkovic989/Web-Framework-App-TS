@@ -1,20 +1,20 @@
-import { ApiSync } from './models/ApiSync'
-import { Attributes } from './models/Attributes'
-import { Collection } from './models/Collection'
-import { Events } from './models/Events'
-import { Model } from './models/Model'
-import { User } from './models/User'
+import { ApiSync, Attributes, Collection, Events, Model, User } from './models'
+import { UserEdit, UserForm, UserList, UserShow } from './views'
 import { CollectionView } from './views/CollectionView'
-import { UserEdit } from './views/UserEdit'
-import { UserForm } from './views/UserForm'
-import { UserList } from './views/UserList'
-import { UserShow } from './views/UserShow'
 import { View } from './views/View'
-import { WARNS, LINKS, TEMPLATES } from './types/enums'
-import { Data, Eventing, Sync, HasId, UserProps, UserShowData, Callback, EventsCallback, Deserialize } from './types/interfaces'
+import { WARNS, LINKS, TEMPLATES, Data, Eventing, Sync, HasId, UserProps, UserShowData, Callback, EventsCallback, Deserialize } from './types'
 
 /*
-    JSDoc has been used throughout the app only to describe different Classes, functions and types.
+    Purpose of this application is to present the manner in which TypeScript should be used to access its full potential while developing an application, and as a playground.
+
+    This app is using barrel modules. 
+    Be aware that barrel modules could cause unwanted effects:
+      - Some testing frameworks (Jest) might take longer time to run tests when parsing barrel modules. Barrel modules intentionally obfuscate file location and testing frameworks could have to load every export inside it to find its target
+      - Barrel modules could be affecting JS file size significantly in larger-scale projects, which could affect website's user experience
+      - Continuous integration stages times could be affected by a large percent
+      - Bundlers might encounter issues when TypeScript is combined with barrel modules
+
+    JSDoc has been used throughout the application only to describe different Classes, functions and types.
     Its functionality of type checking is disabled inside the TS compiler configuration file.
     When enabling type checking of JSDoc, make sure that the types are correctly described.
 */

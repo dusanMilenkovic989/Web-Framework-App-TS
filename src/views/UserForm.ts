@@ -1,7 +1,6 @@
-import { User } from '../models/User'
+import { User } from '../models'
 import { View } from './View'
-import { TEMPLATES } from '../types/enums'
-import { UserProps, EventsCallback } from '../types/interfaces'
+import { TEMPLATES, UserProps, EventsCallback } from '../types'
 
 /**
  * Class extending the View abstract class. Defines UserForm view class - component - HTML and eventing structure. 

@@ -1,7 +1,6 @@
-import { User } from '../models/User'
+import { User } from '../models'
 import { View } from './View'
-import { TEMPLATES } from '../types/enums'
-import { UserProps } from '../types/interfaces'
+import { TEMPLATES, UserProps } from '../types'
 
 /**
  * Class extending the View abstract class. Defines UserShow view class - component - HTML structure.

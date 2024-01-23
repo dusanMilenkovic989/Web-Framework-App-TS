@@ -1,8 +1,5 @@
-import { ApiSync } from './ApiSync'
-import { Attributes } from './Attributes'
-import { Events } from './Events'
-import { Model } from './Model'
-import { UserProps } from '../types/interfaces'
+import { ApiSync, Attributes, Events, Model } from './'
+import { UserProps } from '../types'
 
 /**
  * Class extending the Model class. Makes use of the static method *initialize* to reduce the verbose syntax for instantiating it.

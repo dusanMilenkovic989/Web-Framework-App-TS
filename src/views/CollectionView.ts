@@ -1,5 +1,5 @@
-import { Collection } from '../models/Collection'
-import { HasId } from '../types/interfaces'
+import { Collection } from '../models'
+import { HasId } from '../types'
 
 /**
  * Abstract view class intended to represent a blueprint for building view classes, which will render lists of models to the DOM.
