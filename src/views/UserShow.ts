@@ -3,7 +3,9 @@ import { View } from './View'
 import { TEMPLATES, UserProps } from '../types'
 
 /**
- * Class extending the View abstract class. Defines UserShow view class - component - HTML structure.
+ * Class extending the View abstract class. 
+ * 
+ * Defines UserShow view class - component - HTML structure.
  */
 class UserShow extends View<User, UserProps> {
     /**

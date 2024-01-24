@@ -6,6 +6,7 @@
 class Attributes<T extends object> {
     /**
      * Creates a data structure system.
+     * @template T The specific type/architecture of a data structure which the Attributes class will be connected with.
      * @param {T} data Data structure.
      * @returns {Attributes} Returns a new instance of the Attributes class.
      */
@@ -13,8 +14,10 @@ class Attributes<T extends object> {
 
     /**
      * Gets the neccessary property of the data structure.
+     * @template K Property of the `T` object.
+     * @template T The specific type/architecture of a data structure which the Attributes class will be connected with.
      * @param {string} userProp Property to be fetched of the data structure.
-     * @returns Returns data stored as a property on the data structure.
+     * @returns {T[K]} Returns data stored as a property on the data structure.
      */
     get = <K extends keyof T>(userProp: K): T[K] =>
     {
@@ -23,7 +26,8 @@ class Attributes<T extends object> {
 
     /**
      * Gets all the properties of the data structure.
-     * @returns Returns data stored.
+     * @template T The specific type/architecture of a data structure which the Attributes class will be connected with.
+     * @returns {T} Returns data stored.
      */
     get getAll (): T
     {
@@ -32,8 +36,9 @@ class Attributes<T extends object> {
 
     /**
      * Updates the neccessary property/ies on the data structure.
-     * @param {Object} update Update object for changing the data structure.
-     * @returns No return value.
+     * @template T The specific type/architecture of a data structure which the Attributes class will be connected with.
+     * @param {T} update Update object for changing the data structure.
+     * @returns {void} No return value.
      */
     set = (update: T): void =>
     {

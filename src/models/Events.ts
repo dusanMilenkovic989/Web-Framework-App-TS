@@ -4,12 +4,16 @@ import { WARNS, Callback } from '../types'
  * Class defining an arbitrary (most likely even general) eventing system.
  */
 class Events {
+    /**
+     * @template Callback Describes callback function.
+     */
     events: { [key: string]: Callback[] } = {}
 
     /**
-     * Registers an event.
+     * Registers an event listener.
+     * @template Callback Describes callback function.
      * @param {string} eventName Event name.
-     * @param {Function} callback Callback to be triggered when an event occurs.
+     * @param {Callback} callback Callback to be triggered when an event occurs.
      * @returns {void} No return value.
      */
     on = (eventName: string, callback: Callback): void =>

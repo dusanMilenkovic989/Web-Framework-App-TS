@@ -4,7 +4,9 @@ import { View } from './View'
 import { WARNS, UserProps } from '../types'
 
 /**
- * Class extending the View abstract class. Defines UserEdit view class - component - HTML and nesting components structure.
+ * Class extending the View abstract class. 
+ * 
+ * Defines UserEdit view class - component - HTML and nesting components structure.
  */
 class UserEdit extends View<User, UserProps> {
     /**
@@ -20,7 +22,9 @@ class UserEdit extends View<User, UserProps> {
     `
 
     /**
-     * Defines rendering structure of nested components. At this stage there is no need for adding simillar functionality to eventsMap and bindEvents - creating map object and binding it inside the View (super) class, because there is direct reference to the documentFragment from the View class
+     * Defines rendering structure of nested components. 
+     * 
+     * At this stage there is no need for adding simillar functionality to eventsMap and bindEvents - creating map object and binding it inside the View (super) class, because there is direct reference to the documentFragment from the View class.
      * @param {DocumentFragment} documentFragment DOM fragment coming from *template* method.
      * @returns {void} No return value.
      */

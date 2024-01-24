@@ -10,6 +10,7 @@ import { HasId } from '../types'
 abstract class CollectionView<T, K extends HasId> {
     /**
      * Abstract method which will have to be implemented by the view class, that renders model of a certain type to the DOM.
+     * @template T Type of a complete model which the CollectionView class will be connected with.
      * @param {Element} itemParent DOM element in which a model will be rendered, inside the DOM.
      * @param {T} model Model for rendering to the DOM.
      * @returns {void} No return value.
@@ -18,6 +19,9 @@ abstract class CollectionView<T, K extends HasId> {
 
     /**
      * Asigns the model collection for rendering and the parent inside the DOM in which the models will be rendered.
+     * @template T Type of a complete model which the CollectionView class will be connected with.
+     * @template K The specific type/architecture of a data structure which the CollectionView class will be connected with.
+     * @template Collection Type of the Collection class.
      * @param {Collection<T, K>} collection Model collection.
      * @param {Element} parent HTML element which will contain model collection.
      * @returns {CollectionView} Returns a new instance of the class extending the CollectionView class.

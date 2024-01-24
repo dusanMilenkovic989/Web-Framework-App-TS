@@ -3,7 +3,9 @@ import { View } from './View'
 import { TEMPLATES, UserProps, EventsCallback } from '../types'
 
 /**
- * Class extending the View abstract class. Defines UserForm view class - component - HTML and eventing structure. 
+ * Class extending the View abstract class. 
+ * 
+ * Defines UserForm view class - component - HTML and eventing structure. 
  */
 class UserForm extends View<User, UserProps> {
     /**
@@ -14,6 +16,7 @@ class UserForm extends View<User, UserProps> {
 
     /**
      * Registers an event map, which will later be parsed, elements found inside the DOM and proper event listeners attached to them.
+     * @template EventsCallback Describes event handler.
      * @returns {Object} Returns object containing event names and selectors as keys and event handlers as values.
      */
     protected eventsMap = (): { [key: string]: EventsCallback } =>

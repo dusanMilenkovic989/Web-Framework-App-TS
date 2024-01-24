@@ -42,6 +42,7 @@ const TEMPLATES = {
 
     /**
      * Method tasked with returning a template for rendering by a component, which builds upon the user data provided.
+     * @template UserShowData Describes *User* view `name` and `age` properties which will contain data for rendering to the DOM.
      * @param {UserShowData} [userDataObject] Optional data object containing user data.
      * @returns {string} Returns template for rendering by component. Template will use 'Anonymous' as User's name, and no value as User's age if none are provided through the functions argument.
      */

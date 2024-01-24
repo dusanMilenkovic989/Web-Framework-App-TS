@@ -14,7 +14,7 @@ import { WARNS, HasId, EventsCallback } from '../types'
 /**
  * Abstract view class intended to represent a blueprint for building view classes - components - which will render HTML to the DOM.
  * @template T Type of a complete model.
- * @template Model Model model type.
+ * @template Model Type of the Model class.
  * @template K The specific type/architecture of a data structure.
  * @template HasId Describes an object which will optionally have an *id* property.
  */
@@ -26,7 +26,10 @@ abstract class View<T extends Model<K>, K extends HasId> {
     protected abstract template(): string
 
     /**
-     * Asigns the parent inside the DOM in which the model will be rendered and the model for rendering. Sets the component for re-rendering when the 'change' event gets triggered.
+     * Asigns the parent inside the DOM in which the model will be rendered and the model for rendering. 
+     * 
+     * Sets the component for re-rendering when the 'change' event gets triggered.
+     * @template T Type of a complete model which the View class will be connected with.
      * @param {Element} parent HTML element which will contain model.
      * @param {T} model Model for rendering.
      * @returns {View} Returns a new instance of the class extending the View class.
@@ -49,7 +52,10 @@ abstract class View<T extends Model<K>, K extends HasId> {
     }
 
     /**
-     * Optionaly registers an event map, which will later be parsed, elements found inside the DOM and proper event listeners attached to them. Not abstract, since implementing this method will be optional.
+     * Optionaly registers an event map, which will later be parsed, elements found inside the DOM and proper event listeners attached to them. 
+     * 
+     * Not abstract, since implementing this method will be optional.
+     * @template EventsCallback Describes event handler.
      * @returns {Object} Returns object containing event names and selectors as keys and event handlers as values.
      */
     protected eventsMap = (): { [key: string]: EventsCallback } => ({})
@@ -106,7 +112,9 @@ abstract class View<T extends Model<K>, K extends HasId> {
     }
 
     /**
-     * Provides a way to optionally render components inside the parent component using this. Not abstract, since implementing this method will be optional.
+     * Provides a way to optionally render components inside the parent component using this. 
+     * 
+     * Not abstract, since implementing this method will be optional.
      * @param {DocumentFragment} documentFragment DOM fragment coming from *template* method, in which the components could be nested.
      * @returns {void} No return value.
      */

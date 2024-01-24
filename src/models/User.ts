@@ -8,6 +8,7 @@ class User extends Model<UserProps> {
 
     /**
      * Creates a new preconfigured instance of the User class.
+     * @template UserProps Describes *User* model which will optionally have an `id`, `name` and/or `age` property/ies.
      * @param {UserProps} data Object with an optional id, name and age properties.
      * @param {string} syncRootUrl Link for fetching and saving data to an outside API.
      * @returns {User} Returns a new instance of the User class.

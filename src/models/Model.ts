@@ -16,6 +16,10 @@ import { WARNS, Data, Eventing, Sync, HasId } from '../types'
 class Model<T extends HasId> {
     /**
      * Asigns the data structure, eventing and synchronization system.
+     * @template T The specific type/architecture of a data structure which the Model class will be connected with.
+     * @template Data Describes methods which will have to be implemented by a data structure.
+     * @template Eventing Describes methods which will have to be implemented by an eventing system.
+     * @template Sync Describes methods which will have to be implemented by a synchronization system.
      * @param {Data} attributes Object defining the data structure.
      * @param {Eventing} events Object defining the eventing system.
      * @param {Sync} sync Object defining the synchronization system.
@@ -28,9 +32,11 @@ class Model<T extends HasId> {
     ) {}
 
     /**
-     * Access data stored.
-     * @param {string} property Specific part of the data stored.
-     * @returns Returns desired part of the data stored.
+     * Gets the neccessary property of the data structure.
+     * @template K Property of the `T` object.
+     * @template T The specific type/architecture of a data structure which the Model class will be connected with.
+     * @param {string} key Property to be fetched of the data structure.
+     * @returns {T[K]} Returns data stored as a property on the data structure.
      */
     get get()
     {
@@ -38,8 +44,9 @@ class Model<T extends HasId> {
     }
 
     /**
-     * Set new data and trigger 'change' event.
-     * @param {T} update Update object representing new data.
+     * Updates the neccessary property/ies on the data structure and trigger the 'change' event.
+     * @template T The specific type/architecture of a data structure which the Model class will be connected with.
+     * @param {T} update Update object for changing the data structure.
      * @returns {void} No return value.
      */
     set = (update: T): void =>
@@ -50,8 +57,9 @@ class Model<T extends HasId> {
 
     /**
      * Registers an event listener.
+     * @template Callback Describes callback function.
      * @param {string} eventName Event name.
-     * @param {Function} callback Event handler.
+     * @param {Callback} callback Callback to be triggered when an event occurs.
      * @returns {void} No return value.
      */
     get on()
@@ -60,8 +68,8 @@ class Model<T extends HasId> {
     }
 
     /**
-     * Triggers an event listener.
-     * @param {string} eventName Event which should be triggered.
+     * Triggers an event.
+     * @param {string} eventName Name of the event which is to be triggered.
      * @returns {void} No return value.
      */
     get trigger()
@@ -70,9 +78,11 @@ class Model<T extends HasId> {
     }
 
     /**
-     * Fetches previously persisted data. Triggers the 'fetch' event in case of success, or the 'error' event in case the 'id' was not present as part of the Model data, or if an error occured during the fetching.
-     * @returns {Promise<Response | void>} Returns a promise containing a response or nothing, in case the 'id' property was not present as part of the Model data.
-    */
+     * Fetches persisted data for a single entry.
+     * 
+     * Triggers the 'fetch' event in case of success, or the 'error' event in case the 'id' was not present as part of the Model data, or if an error occured during the fetching.
+     * @returns {Promise<Response | void>} Returns a Promise containing a response or nothing, in case the 'id' property was not present as part of the Model data.
+     */
     fetch = async (): Promise<Response | void> =>
     {
         const ID = this.attributes.get('id')
@@ -102,9 +112,11 @@ class Model<T extends HasId> {
     }
 
     /**
-     * Fetches previously persisted data for all models of a type. Triggers the 'fetch' event in case of success, or the 'error' event in case an error occured during the fetching.
-     * @returns {Promise<Response>} Returns a promise containing a response.
-    */
+     * Fetches persisted data for all entries.
+     * 
+     * Triggers the 'fetch' event in case of success, or the 'error' event in case an error occured during the fetching.
+     * @returns {Promise<Response>} Returns a Promise containing the response from a server.
+     */
     fetchAll = async (): Promise<Response> =>
     {
         const RESPONSE = await this.sync.fetchAll()
@@ -123,8 +135,10 @@ class Model<T extends HasId> {
     }
 
     /**
-     * Persists data. Triggers the 'save' event in case of success, or the 'error' event in case an error occured during saving.
-     * @returns {Promise<Response>} Returns a promise containing a response.
+     * Persists data.
+     * 
+     * Triggers the 'save' event in case of success, or the 'error' event in case an error occured during saving.
+     * @returns {Promise<Response>} Returns a Promise containing the response from a server.
      */
     save = async (): Promise<Response> =>
     {

@@ -9,7 +9,7 @@ class ApiSync<T extends HasId> {
     /**
      * Creates an outside API persisting system.
      * @param {string} url URL on which the requests for fetching and saving data should be performed.
-     * @returns Returns a new instance of the ApiSync class.
+     * @returns {ApiSync} Returns a new instance of the ApiSync class.
      */
     constructor(public url: string) {}
 
@@ -28,6 +28,7 @@ class ApiSync<T extends HasId> {
 
     /**
      * Persists data.
+     * @template T The specific type/architecture of a data structure which the ApiSync class will be connected with.
      * @param {T} data An object containing the data to be persisted.
      * @returns {Promise<Response>} Returns a Promise containing the response from a server.
      */
