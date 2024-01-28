@@ -118,4 +118,4 @@ type EventsCallback = (e: Event) => void
  */
 type Deserialize<T, K extends HasId> = (entry: K) => T
 
-export { Data, Eventing, Sync, HasId, UserProps, UserShowData, Callback, EventsCallback, Deserialize }
+export type { Data, Eventing, Sync, HasId, UserProps, UserShowData, Callback, EventsCallback, Deserialize }
